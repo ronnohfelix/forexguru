@@ -1,0 +1,203 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FOREX GURUS</title>
+
+    <!-- box icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}" />
+  </head>
+
+  <body>
+    <!-- header design -->
+    <header class="header">
+      <a href="#" class="logo">FOREX GURUS</a>
+      <i class="bx bx-menu" id="menu-icon"></i>
+      <nav class="navbar">
+          <a href="#home" class="active">HOME</a>
+          <a href="#about">ABOUT US</a>
+          <a href="#forextrading">FOREX TRADING</a>
+          <a href="#whyus">WHY US</a>
+          <a href="#contact">CONTACT US</a>
+          {% if not request.user.is_authenticated %}
+          <a href="{% url 'login' %}">LOGIN</a>
+          <a href="{% url 'register' %}">REGISTER</a>
+          {% else %}
+          <a class="hello-msg" href="{% url 'account' %}"><strong>{{request.user|upper }}</strong></a>
+          <!--<a class="hello-msg" href="{% url 'logout' %}">LOGOUT</a>-->
+          {% endif %}
+
+      </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home" id="home">
+      <div class="home-content">
+        <h2 class="heading">A Global Market Leader
+          <br>
+        <span>in Forex Trading</span></h2>
+        <p>
+          Trade with confidence and benefit from the reliability of a trusted</p>
+          <p>
+          broker with a proven record of stability, security and strength.
+        </p>
+        </div>
+    </section>
+
+    <!-- about section design -->
+    <section class="about" id="about">
+      <div class="about-content">
+        <h2 class="heading">About <span>Forex Guru</span></h2>
+<p>Welcome to Forex Gurus, your trusted partner in the world of forex trading! We are a dedicated team of trading experts and enthusiasts, committed to helping traders like you navigate the complexities of the foreign exchange market and achieve your financial goals.</p>
+
+<h3>Our Mission</h3>
+<p>At Forex Gurus, our mission is clear: to empower traders with the tools and knowledge they need to succeed in the dynamic world of forex trading. We understand that the forex market can be both rewarding and challenging, and that's why we've developed a range of accurate bots and comprehensive resources to assist you every step of the way.</p>
+
+<h3>Who We Are</h3>
+<p>Expert Traders: Our team is composed of seasoned traders with years of experience in the forex industry. We've weathered market fluctuations, learned from successes and failures, and are here to share our insights with you.</p>
+
+<p>Innovative Technologists: Forex Gurus is not just about expertise; it's also about cutting-edge technology. Our talented developers have created sophisticated, accurate bots that can analyze market data in real-time, helping you make informed trading decisions.</p>
+
+<p>Educators: We believe that knowledge is power, and we're dedicated to providing you with the education you need to succeed. Our comprehensive educational resources, including webinars, tutorials, and trading guides, are designed to enhance your trading skills.</p>
+        <h3>We Put Our Customers First</h3>
+        <p>
+          We believe that superior service is the key to success.
+           Here at FOREX GURUS, we pride ourselves on our excellent customer service, which is why we are always on hand to help you out, regardless of your level of experience. In addition to our customer support, we also provide you with access to a wide range of educational resources.
+            Whether you are a complete beginner or a seasoned trader, our educational resources can help you to improve your trading skills and reach your trading goals.
+        </p>
+      </div>
+    </section>
+
+    <!-- forextrading section design -->
+    <section class="forextrading" id="forextrading">
+      <!--<div class="forextrading-img">
+        <img src="{% static 'images/f3.jpg' %}" alt="" />
+      </div>-->
+      <div class="forextrading-content">
+      <h2 class="heading">Forex Trading and <span>Our Company</span></h2>
+<h3>Forex Trading: The Global Financial Market</h3>
+
+<p>Forex trading, short for foreign exchange trading, is the largest and most liquid financial market in the world. It involves the buying and selling of currencies from different countries, with the aim of profiting from fluctuations in exchange rates. Unlike traditional stock markets, forex operates 24 hours a day, five days a week, thanks to its global nature. This constant activity provides traders with a multitude of opportunities.</p>
+
+<h3>The Challenge of Forex Trading</h3>
+
+<p>While the forex market offers immense potential for profit, it also presents significant challenges. The market's volatility can be both a blessing and a curse, as prices can change rapidly, making it difficult for traders to stay ahead of the curve. Additionally, the complex factors that influence currency exchange rates, such as economic indicators, geopolitical events, and central bank policies, can be overwhelming for traders, especially those new to the world of forex.</p>
+
+<h3>Forex Gurus' Role in Your Trading Success</h3>
+
+<p>At Forex Gurus, we recognize these challenges, and our company is founded on the principles of providing traders with the resources and support they need to succeed in forex trading. Here's how we play a crucial role in your trading journey:</p>
+
+<p>1. Accurate Bots: Our advanced trading bots are designed to analyze vast amounts of data in real-time, helping you identify precise trading opportunities. These bots take the guesswork out of trading, providing you with signals that are backed by data-driven analysis.</p>
+
+<p>2. Expert Guidance: Our team of seasoned traders and educators is here to guide you. We offer a range of educational resources, including webinars, tutorials, and trading guides, to help you develop the skills and knowledge necessary for successful forex trading.</p>
+
+<p>3. Community Support: Forex Gurus is more than just a service; it's a thriving community of traders. By joining our community, you'll have access to a network of like-minded individuals who share their experiences, insights, and trading strategies. This collaborative environment can be invaluable on your trading journey.</p>
+
+<p>4. Transparency: We believe in providing transparent and honest information about the forex market, our services, and our performance. You can trust us to offer accurate and unbiased insights that help you make informed decisions.</p>
+      </div>
+</section>
+<!-- whyus section design -->
+<section class="whyus" id="whyus">
+  <div class="whyus-content">
+  <h2 class="heading">Why <span>Us</span></h2>
+    <div class="card">
+      <i class="bx bx-award"></i>
+      <h3>Best Forex Trading Platform</h3>
+      <p>FOREX GURUS is the best forex trading platform for both beginners and professional traders. We offer the best trading conditions, including flexible leverage, tight spreads and more.</p>
+    </div>
+    <div class="card">
+      <i class="bx bx-dollar-circle"></i>
+      <h3>Lowest Spreads</h3>
+      <p>FOREX GURUS offers the lowest spreads in the industry, starting from 0.0 pips. We also offer flexible leverage, allowing you to trade with up to 1:1000 leverage.</p>
+    </div>
+    <div class="card">
+      <i class="bx bx-support"></i>
+      <h3>24/7 Customer Support</h3>
+      <p>FOREX GURUS offers 24/7 customer support, including live chat, email and phone support. We also offer a range of educational resources, including webinars, tutorials and trading guides.</p>
+    </div>
+    <div class="card">
+      <i class="bx bx-credit-card"></i>
+      <h3>Multiple Payment Methods</h3>
+      <p>FOREX GURUS offers a wide range of payment methods, including credit card, debit card, bank transfer, Skrill, Neteller and more.</p>
+    </div>
+  </div>
+</section>
+    <!-- Updated contact section with additional information -->
+    <section class="contact" id="contact">
+      <h2 class="heading">Contact <span>Us</span></h2>
+      <div class="contact-info">
+        <!-- Left side with office address, phone, and email -->
+        <div class="contact-left">
+          <h3><i class="fas fa-map-marker-alt"></i> Our Office</h3>
+          <p>
+            123 Main Street<br>
+            Cityville, USA<br>
+            Postal Code: 5005
+          </p>
+          <h3><i class="fas fa-phone"></i> Phone</h3>
+          <p>+1 (123) 456-7890</p>
+          <h3><i class="far fa-envelope"></i> Email</h3>
+          <p>forexgurus@gmail.com</p>
+          <h3>Follow Us</h3>
+          <div class="social-media">
+          <a href="#"><i class="bx bxl-facebook"></i></a>
+          <a href="#"><i class="bx bxl-twitter"></i></a>
+          <a href="#"><i class="bx bxl-instagram-alt"></i></a>
+          <a href="#"><i class="bx bxl-linkedin"></i></a>
+        </div>
+        </div>
+    <!-- Right side with the contact form -->
+    <div class="contact-right">
+      <form action="https://formspree.io/f/meqwyznv" method="post">
+        <div class="input-box">
+          <input type="text" name="name" placeholder="Enter Name" required />
+          <input type="email" name="email" placeholder="Enter Email" required />
+        </div>
+        <div class="input-box">
+          <input type="number" name="number" placeholder="Enter Phone" required />
+          <input type="text" name="message" placeholder="Enter Subject" required />
+        </div>
+        <textarea
+          name="Message"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Your Message"
+          required
+        ></textarea>
+        <input type="submit" value="Send" class="btn" />
+      </form>
+    </div>
+  </div>
+</section>
+    <!-- footer design -->
+    <footer class="footer">
+      <div class="footer-text">
+        <p>Copyright &copy; 2023, <span>Forex Gurus Limited</span>. All Rights Reserved.</p>
+      </div>
+      <div class="footer-icon">
+        <a href="#home"><i class="bx bx-up-arrow-alt"></i></a>
+      </div>
+    </footer>
+
+    <!-- scroll reveal -->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- typed js -->
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+
+    <!-- custom js -->
+    <script src="{% static 'js/script.js' %}"></script>
+  </body>
+</html
